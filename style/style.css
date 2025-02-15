@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family:'Poppins', Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --black:#434242;
+    --nav_bg:#9e8f7f;
+    --bg:#fcecdc;
+    --bg2:#f1ddca;
+    --bg_hover:#c6b4a4;
+}
+
+/*-------login-------*/
+body.login{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--nav_bg);
+}
+
+
+.container{
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.371);
+}
+
+form.login{
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 2s ease;
+    color: var(--black);
+}
+
+ h2{
+    font-size: 1.5rem;
+    align-self: center;
+    margin-bottom: 5px;
+ }
+
+ .login_form{
+    padding: 10px;
+ }
+
+ .login_form label{
+    display: block;
+    font-size: 1rem;
+    margin-top: 13px;
+ }
+
+ .login_form input{
+    width: 100%;
+    padding: 7px;
+    border-radius: 15px; 
+    outline: none;
+    border: 2px #434242 solid;
+    transition: all 0.5s ease;
+ }
+
+ input:focus{
+    transform: scale(1.05);
+    border-color: #704f3a;
+ }
+
+
+.btn_login{
+    width: 170px;
+    align-self: center;
+    margin-top: 1em;
+    font-size: 1.2rem;
+    padding: 0.4em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #563d2d;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn_login:hover{
+    transform: scale(1.1);
+    background-color: #a08679;
+}
+
+form p{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.img_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img_box img{
+    width: 100%;
+    height: 100%;
+    animation: slideIn 1.5s ease;
+}
+
+@keyframes slideIn{
+    0%{transform: translateX(300px);
+        opacity: 0;
+    }
+    100%{transform: translateX(0);
+        opacity: 1;
+    }
+ }
+
+ span.error-msg {
+    display: block;
+    align-self: center;
+    font-weight: 400;
+    color: #d32f2f;
+    background-color: #fdecea;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 1px solid #d32f2f; 
+    max-width: 500px;
+    text-align: center;
+    margin: 5px;
+    font-size: 0.8rem;
+    animation: fadeIn 0.5s ease;
+}
+
+ /*-------register-------*/
+ body.register{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--nav_bg);  
+ }
+
+form.register{
+    padding: 50px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.371);
+    color: var(--black);
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+}
+
+.register_form{
+    padding: 13px;
+}
+
+.register_form label{
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+
+.register_form input{
+    width: 450px;
+    padding: 7px;
+    border-radius: 15px; 
+    outline: none;
+    border: 2px black solid;
+    transition: all 0.5s ease;
+ }
+
+ form input.btn_register{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 50px;
+    margin-top: 2em;
+    padding: 0.4em 2em; 
+    border-radius: 7px;
+    border: none;
+    background-color: #563d2d;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    align-self: center;
+}
+
+.btn_register:hover{
+    transform: scale(1.1);
+    background-color: #a08679;
+}
+
+input:focus{
+    transform: scale(1.05);
+    border-color: #704f3a;
+ }
+
+ /*------- navbar -------*/
+ #navbar {
+    color: var(--black);
+    padding: 30px;
+    background: var(--nav_bg);
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
+}
+
+   
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--nav_bg);
+}
+   
+#navbar li.menu {
+    float: left;
+}
+   
+#navbar li.menu a {
+    display: block;
+    color: var(--black);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+   
+#navbar li.menu a:hover {
+    background-color: var(--bg_hover);
+    color: white;
+    border-radius: 20px;
+}
+   
+#navbar li.btn_logout {
+    float: right;
+}
+   
+#navbar li.btn_logout {
+    background-color: var(--black);
+    border-radius: 20px;
+}
+   
+#navbar li.btn_logout a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+   
+#navbar li p {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar li.logo {
+    padding: 14px 16px;
+    float: left; 
+    margin-right: 50px; 
+}
+
+#navbar li.logo a {
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo_image {
+    width: 35px;
+    height: 30px;
+    margin-right: 7px;
+}
+
+
+/*-------dashboard-------*/
+.frontpage{
+    background: var(--nav_bg);
+    padding-left: 15%;
+    padding-right: 12%;
+    position: relative;
+    height: 55vh;
+    overflow: hidden;
+}
+
+.frontpage h1{
+    font-family: "Host Grotesk";
+    color: white;
+    padding-top: 10%;
+    font-size: 45px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.frontpage h4{
+    height: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: "Fustat";
+    text-transform: uppercase;
+    color: #6b6055;
+}
+
+.frontpage h4 .highlight {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    color: #f1ddca;
+}
+
+.img_top {
+    float: right;
+    max-width: 450px; 
+    height: auto;
+    position: relative;
+    bottom: 0;
+}
+
+.img_top img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.button1 {
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+    color: white;
+    font-family: "Fustat";
+    font-size: 13px;
+    border-radius: 30px; 
+    border: 1px solid #f1ddca;
+    cursor: pointer; 
+    width: 10%;
+    height: 7%;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.button2{
+    display:inline-flex ;
+    align-items: center;
+    justify-content: center;
+    background-color: #6b6055; 
+    color: white;
+    font-family: "Fustat";
+    font-size: 13px;
+    border-radius: 30px; 
+    cursor: pointer; 
+    width: 10%;
+    height: 7%;
+}
+
+.button2 .button-logo {
+    padding-right: 6px;
+}
+
+.button1:hover {
+    background-color: var(--black); 
+}
+
+.button2:hover {
+    background-color: var(--black);
+}
+
+.format {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding-bottom: 20px;
+}
+  
+.format .intro_dog{
+    width: 15%;
+    height: auto;
+}
+
+.format h2{
+    padding-bottom: 5px;
+    position: relative;
+    font-family: "Host Grotesk";
+    color: var(--black);
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.format h2::before{
+    content: "";
+    position: absolute;
+    width: 20%;
+    bottom: -10px;
+    left: 42%;
+    border-bottom: 3px solid #f1ddca;
+}
+
+.format p {
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: "Fustat";
+    max-width: 60%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 900px;
+    margin-bottom: 150px;
+}
+
+.card {
+    display: flex; /* Enables flexbox for the card */
+    flex-direction: column; /* Ensures elements stack vertically */
+    justify-content: space-between; /* Pushes content to top and bottom */
+    width: calc(33.33% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    text-align: center;
+    box-sizing: border-box;
+    height: 300px; /* Adjust height if needed */
+    color: var(--black);
+}
+
+
+.card h3{
+    padding-bottom: 5px;
+    padding-top: 40px;
+    position: relative;
+    font-family: "Host Grotesk";
+    color: var(--black);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.card h3::before{
+    content: "";
+    position: absolute;
+    width: 14%;
+    bottom: -10px;
+    left: 43%;
+    border-bottom: 3px solid #f1ddca;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.card button {
+    padding: 10px 20px;
+    border: 2px solid #f1ddca;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Fustat";
+    background-color: transparent; /* Removes the default gray background */
+    color: var(--black); /* Ensure text color is visible */
+    transition: background-color 0.3s ease; /* Optional: Add a hover transition */
+    margin-top: auto;
+    width: auto;
+    align-self: center;
+}
+
+.card button:hover {
+    background-color: #6b6055; 
+    color: white;
+}
+
+/*-------Top 10 dogs-------*/
+.dashboard {
+    background-image: url(../img/header_dog.png);
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: right 80%;
+    position: relative;
+    background-color: #fdebda;
+    color: var(--black);
+    padding-bottom: 160px;
+}
+
+.dashboard h1{
+    text-align: center; 
+    font-family: 'Bodoni Bold';
+    padding-top: 35px;
+    font-size: 3rem;
+}
+
+.dashboard h2{
+    text-align: center; 
+    font-family: Times New Roman;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.dashboard h3 {
+    font-size: 27px;
+    margin-left: 23%;
+    padding-top: 70px;
+}
+
+.rank_table {
+    width: 650px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 200px;
+    font-size: 12px;
+}
+
+.rank_table th, .rank_table td {
+    padding: 5px 10px;
+}
+
+.rank_table th {
+    background-color: var(--black);
+    color: #fff;
+}
+
+.rank_table tr:nth-child(odd) {
+    background-color: var(--bg2); 
+}
+
+
+.rank_table tr:hover {
+    background-color: var(--bg_hover);
+}
+
+.rank_table td a {
+    color: var(--black);
+}
+
+.rank_table td a:hover {
+    text-decoration: underline;
+}
+
+
+/*-----Owner details------*/
+.owner-details {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: var(--bg_hover);
+    border-radius: 20px;
+    padding: 50px 40px;
+    width: 800px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    text-align: center;
+    color: var(--black);
+}
+
+.owner-details:hover {
+    transform: translateX(-50%) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.owner-details h1 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: capitalize; 
+    border-bottom: 3px solid var(--nav_bg);
+    padding-bottom: 15px;
+    width: 600px;
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center;
+}
+
+.owner-details p {
+    font-size: 1.2rem; 
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.owner-details strong {
+    font-size: 1.1rem;
+    color: var(--black);
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.email-link {
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.1s ease, text-decoration 0.1s ease;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
